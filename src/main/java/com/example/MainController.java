@@ -19,6 +19,10 @@ public class MainController {
     @FXML void initialize(){
         for(int i = 0; i < boxes.length; i++){
             boxes[i] = new CheckBox();
+            boxes[i].setText(String.valueOf(i+1));
+            boxes[i].selectedProperty().addListener((observable, oldValue, newValue)->{
+                this.countNums.setText(String.valueOf(countChecked()));
+            });
             gridPane.add(boxes[i], i%7, i/7);
         }
     }
@@ -28,6 +32,34 @@ public class MainController {
         this.startSave();
     }
 
-    void startSave(){}
+    void startSave(){
+        System.out.println("Mentés...");
+        if (countChecked() == 5) {
+            Storage.writeContent(this.generateLine());
+        }else{
+            System.err.println("Hiba, 5 számot kell választanod");
+        }
+    }
+
+    int countChecked(){
+        int count = 0;
+        for (CheckBox box : boxes) {
+            if(box.isSelected()){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    String generateLine(){
+        StringBuilder sb = new StringBuilder();
+        for (CheckBox box : boxes) {
+            if(box.isSelected()){
+                sb.append(box.getText());
+                sb.append(", ");
+            }
+        }
+        return sb.toString();
+    }
 
 }

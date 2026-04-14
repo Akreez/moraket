@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
    <children>
       <GridPane fx:id="gridPane" layoutX="72.0" layoutY="14.0" prefHeight="301.0" prefWidth="456.0">
         <columnConstraints>
@@ -40,6 +39,6 @@
         </rowConstraints>
       </GridPane>
       <Button layoutX="272.0" layoutY="354.0" mnemonicParsing="false" onAction="#onClickSaveButton" text="Mentés" />
-      <TextField fx:id="countNums" layoutX="280.0" layoutY="321.0" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="countNums" alignment="CENTER" layoutX="280.0" layoutY="321.0" prefHeight="25.0" prefWidth="40.0" text="0" />
    </children>
 </Pane>
